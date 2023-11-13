@@ -1,10 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>table</title>
 </head>
 <body>
-$END$
+        <table>
+            <tr>
+                <td style="width:20px"></td>
+                <td>A</td>
+                <td>B</td>
+                <td>C</td>
+                <td>D</td>
+            </tr>
+            <tr>
+                <td style="width:20px">1</td>
+                <td><form th:method="POST" th:action="@{/table}" th:object="${cell}">
+                    <input th:type="text" th:name="value" th:value="${cells.get(0).getValue()}">
+                    <input type="hidden" value="A1" name="address"/>
+                    <input th:type="submit" class="submit">
+                    </form></td>
+                <td><form th:method="POST" th:action="@{/table}" th:object="${cell}">
+                    <input th:type="text" th:name="value" th:value="${cells.get(4).getValue()}">
+                    <input type="hidden" value="B1" name="address"/>
+                    <input th:type="submit" class="submit">
+                </form></td>
+                <td><form th:method="POST" th:action="@{/table}" th:object="${cell}">
+                    <input th:type="text" th:name="value" th:value="${cells.get(8).getValue()}">
+                    <input type="hidden" value="C1" name="address"/>
+                    <input th:type="submit" class="submit">
+                </form></td>
+                <td><form th:method="POST" th:action="@{/table}" th:object="${cell}">
+                    <input th:type="text" th:name="value" th:value="${cells.get(12).getValue()}">
+                    <input type="hidden" value="D1" name="address"/>
+                    <input th:type="submit" class="submit">
+                </form></td>
+            </tr>
+            <tr>
+                <td style="width:20px">2</td>
+                <td><form th:method="POST" th:action="@{/table}" th:object="${cell}">
+                    <input th:type="text" th:name="value" th:value="${cells.get(1).getValue()}">
+                    <input type="hidden" value="A2" name="address"/>
+                    <input th:type="submit" class="submit">
+                </form></td>
+                <td><form th:method="POST" th:action="@{/table}" th:object="${cell}">
+                    <input th:type="text" th:name="value" th:value="${cells.get(5).getValue()}">
+                    <input type="hidden" value="B2" name="address"/>
+                    <input th:type="submit" class="submit">
+                </form></td>
+                <td><form th:method="POST" th:action="@{/table}" th:object="${cell}">
+                    <input th:type="text" th:name="value" th:value="${cells.get(9).getValue()}">
+                    <input type="hidden" value="C2" name="address"/>
+                    <input th:type="submit" class="submit">
+                </form></td>
+                <td><form th:method="POST" th:action="@{/table}" th:object="${cell}">
+                    <input th:type="text" th:name="value" th:value="${cells.get(13).getValue()}">
+                    <input type="hidden" value="D2" name="address"/>
+                    <input th:type="submit" class="submit">
+                </form></td>
+            </tr>
+            <tr>
+                <td style="width:20px">3</td>
+                <td><form th:method="POST" th:action="@{/table}" th:object="${cell}">
+                    <input th:type="text" th:name="value" th:value="${cells.get(2).getValue()}">
+                    <input type="hidden" value="A3" name="address"/>
+                    <input th:type="submit" class="submit">
+                </form></td>
+                <td><form th:method="POST" th:action="@{/table}" th:object="${cell}">
+                    <input th:type="text" th:name="value" th:value="${cells.get(6).getValue()}">
+                    <input type="hidden" value="B3" name="address"/>
+                    <input th:type="submit" class="submit">
+                </form></td>
+                <td><form th:method="POST" th:action="@{/table}" th:object="${cell}">
+                    <input th:type="text" th:name="value" th:value="${cells.get(10).getValue()}">
+                    <input type="hidden" value="C3" name="address"/>
+                    <input th:type="submit" class="submit">
+                </form></td>
+                <td><form th:method="POST" th:action="@{/table}" th:object="${cell}">
+                    <input th:type="text" th:name="value" th:value="${cells.get(14).getValue()}">
+                    <input type="hidden" value="D3" name="address"/>
+                    <input th:type="submit" class="submit">
+                </form></td>
+            </tr>
+            <tr>
+                <td style="width:20px">4</td>
+                <td><form th:method="POST" th:action="@{/table}" th:object="${cell}">
+                    <input th:type="text" th:name="value" th:value="${cells.get(3).getValue()}">
+                    <input type="hidden" value="A4" name="address"/>
+                    <input th:type="submit" class="submit">
+                </form></td>
+                <td><form th:method="POST" th:action="@{/table}" th:object="${cell}">
+                    <input th:type="text" th:name="value" th:value="${cells.get(7).getValue()}">
+                    <input type="hidden" value="B4" name="address"/>
+                    <input th:type="submit" class="submit">
+                </form></td>
+                <td><form th:method="POST" th:action="@{/table}" th:object="${cell}">
+                    <input th:type="text" th:name="value" th:value="${cells.get(11).getValue()}">
+                    <input type="hidden" value="C4" name="address"/>
+                    <input th:type="submit" class="submit">
+                </form></td>
+                <td><form th:method="POST" th:action="@{/table}" th:object="${cell}">
+                    <input th:type="text" th:name="value" th:value="${cells.get(15).getValue()}">
+                    <input type="hidden" value="D4" name="address"/>
+                    <input th:type="submit" class="submit">
+                </form></td>
+            </tr>
+        </table>
+
 </body>
+    <style>
+        .submit{
+            visibility: hidden;
+        }
+        td{
+            border: 0;
+            column-span: all;
+            width: 120px;
+            height: 30px;
+        }
+        input{
+            width: 102%;
+            border: 1px solid gray;
+            box-sizing: border-box;
+            height: 105%;
+        }
+        table{
+            border-collapse: collapse;
+            border: 0;
+            mso-cellspacing: 0;
+        }
+        form{
+            width: 101%;
+            border: 1px solid gray;
+            box-sizing: border-box;
+            height: 105%;
+        }
+    </style>
 </html>
